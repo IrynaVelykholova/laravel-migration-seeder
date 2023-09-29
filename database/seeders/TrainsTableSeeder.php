@@ -16,11 +16,12 @@ class TrainsTableSeeder extends Seeder
     {
         for ($i = 0; $i <10; $i++) {
             $train = new Train();
-            
+
             $train->azienda = $faker->company();
             $train->stazione_di_partenza = $faker->city();
             $train->stazione_di_arrivo = $faker->city();
             $train->orario_di_partenza = $faker->time();
+            $train->data = $faker->dateTimeBetween('now', '+3 days');
             $train->orario_di_arrivo = $faker->time();
             $train->codice_treno = $faker->numerify('train-####');
             $train->numero_carrozze = $faker->numberBetween(1, 12);
